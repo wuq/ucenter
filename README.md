@@ -20,11 +20,19 @@
 #部署
 
 1.启动服务发现
+
 ` ./consul agent -dev > /out.log 2>&1 &`
+
 2.启动server端
+
 `./tenno.ucenter --registry_address=127.0.0.1:8500`
+
 3.启动网关
+
 `micro api --handler=http`
+
 4.启动client代理
+
 进入client目录 `./client`
+
 
