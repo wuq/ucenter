@@ -1,0 +1,9 @@
+{
+    "masterHost": "192.168.10.110:3306",
+    "slaveHost": [
+    ],
+    "user": "tenno",
+    "pass": "123",
+    "dbname": "tenno",
+    "charset": "utf8"
+}

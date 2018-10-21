@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package go.micro.srv.tenno.ucenter;
+
+service Base {
+    rpc GetUserInfo(GetRequest) returns (Response) {}
+    rpc SetUserInfo(SetRequest) returns (Response) {}
+}
+
+
+message GetRequest {
+    //repeated uint64 uid = 1;
+    uint64 uid = 1;
+}
+
+message SetRequest {
+    uint64 uid = 1;
+    string nickName = 2;
+    string userName = 3;
+    string realName = 4;
+    int32 gender = 5;
+    int32 age = 6;
+    uint64 phone = 7;
+    string email = 8;
+    string country = 9;
+    string province = 10;
+    string city = 11;
+    string language = 12;
+    string avatar = 13;
+    int32 state = 14;
+}
+
+message Response {
+    string msg = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package go.micro.srv.tenno.ucenter;
+
+service Bind {
+	rpc Bind(BindRequest) returns (Response) {}
+	rpc UnBind(UnbindRequest) returns (Response) {}
+	rpc GetBindList(GetBindListRequest) returns (Response) {}
+}
+
+
+message BindRequest {
+	uint64 uid = 1;
+	uint32 accountType = 2;
+	string account = 3;
+}
+
+message UnbindRequest {
+	uint64 uid = 1;
+	uint32 accountType = 2;
+	uint32 smsCode = 3;
+}
+
+message GetBindListRequest {
+	uint64 uid = 1;
+}
+
+message Response {
+	string msg = 1;
+}

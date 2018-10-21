@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package go.micro.srv.tenno.ucenter;
+
+service Ext {
+	rpc GetInfo(GetRequest) returns (Response) {}
+	rpc SetInfo(SetRequest) returns (Response) {}
+}
+
+
+message GetRequest {
+	uint64 uid = 1;
+}
+
+//个性化配置,按业务需要加参数
+message SetRequest {
+	uint64 uid = 1;
+	string bgImg = 2;
+	bool notification = 3;
+}
+
+
+message Response {
+	string msg = 1;
+}

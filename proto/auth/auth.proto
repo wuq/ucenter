@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package go.micro.srv.tenno.ucenter;
+
+service Auth {
+    rpc Login(LoginRequest) returns (Response) {}
+    rpc SDKLogin(SDKLoginRequest) returns (Response) {}
+    rpc Check(CheckRequest) returns (Response) {}
+    rpc Logout(LogoutRequest) returns (Response) {}
+    rpc SendSMS(SmsRequest) returns (Response) {}
+}
+
+
+message LoginRequest {
+	uint64 phone = 1;
+	uint32 appid = 2;
+	int32 code = 3;
+}
+
+message SDKLoginRequest {
+	string unionid = 1;
+	uint32 appid = 2;
+	uint32 type = 3;
+	string nickName = 4;
+	int32 gender = 5;
+	string avatar = 6;
+	string city = 7;
+	string province = 8;
+	string country = 9;
+}
+
+message CheckRequest {
+	uint64 uid = 1;
+	uint32 appid = 2;
+	string token = 3;
+}
+
+message LogoutRequest {
+	uint64 uid = 1;
+	uint32 appid = 2;
+	string token = 3;
+}
+
+message SmsRequest {
+	uint64 uid = 1;
+	int32 appid = 2;
+	uint64 phone = 3;
+}
+
+message Response {
+    string msg = 1;
+}

@@ -1,0 +1,9 @@
+{
+    "host": [
+        "192.168.10.110:6379"
+    ],
+    "auth": "dio123",
+    "maxactive": 10,
+    "maxidle": 1,
+    "timeout": 180
+}
